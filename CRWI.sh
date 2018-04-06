@@ -1,3 +1,5 @@
 #!/bin/bash
-g++ /var/www/html/SPOJ/$1.cpp -o /tmp/$1
-/tmp/$1 < /var/www/html/SPOJ/input.txt 
+SPOJ_PATH="/home/tojatos/Scripts/SPOJ/"
+SAVE_PATH="/tmp/SPOJ/"
+g++ $SPOJ_PATH$1 -o $SAVE_PATH$1
+$SAVE_PATH$1 < "$SPOJ_PATH"input.txt 
