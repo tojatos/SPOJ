@@ -9,6 +9,9 @@ SAVE_PATH="/tmp/SPOJ/"
 INPUT_FILE="${SPOJ_PATH}"input.txt
 TARGET_FILE=$(basename "${1}")
 mkdir -p ${SAVE_PATH}
-[[ -f "${INPUT_FILE}" ]] || touch "${INPUT_FILE}"
 g++ "${SPOJ_PATH}${TARGET_FILE}" -o "${SAVE_PATH}${TARGET_FILE}"
-time "${SAVE_PATH}${TARGET_FILE}" < "${INPUT_FILE}"
+if [[ ! -f "${INPUT_FILE}" ]]; then
+  "${SAVE_PATH}${TARGET_FILE}"
+else
+  time "${SAVE_PATH}${TARGET_FILE}" < "${INPUT_FILE}"
+fi
