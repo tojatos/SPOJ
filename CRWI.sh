@@ -9,7 +9,7 @@ SAVE_PATH="/tmp/SPOJ/"
 INPUT_FILE="${SPOJ_PATH}"input.txt
 TARGET_FILE=$(basename "${1}")
 mkdir -p ${SAVE_PATH}
-g++ "${SPOJ_PATH}${TARGET_FILE}" -o "${SAVE_PATH}${TARGET_FILE}"
+g++ "${SPOJ_PATH}${TARGET_FILE}" -Wall -o "${SAVE_PATH}${TARGET_FILE}"
 if [[ ! -f "${INPUT_FILE}" ]]; then
   "${SAVE_PATH}${TARGET_FILE}"
 else
